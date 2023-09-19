@@ -1,0 +1,21 @@
+{
+  "name": "wordpress-block-theme-template-2023",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "MODE=production node --env-file=.env build.mjs",
+    "deploy": "MODE=production node --env-file=.env deploy.mjs",
+    "watch": "MODE=development nodemon --env-file=.env build.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "archiver": "^6.0.1",
+    "browser-sync": "^2.29.3",
+    "esbuild": "^0.19.3",
+    "nodemon": "^3.0.1",
+    "open": "^9.1.0"
+  }
+}
