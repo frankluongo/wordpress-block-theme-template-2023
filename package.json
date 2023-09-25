@@ -6,7 +6,7 @@
   "scripts": {
     "build": "MODE=production node --env-file=.env build.mjs",
     "deploy": "MODE=production node --env-file=.env deploy.mjs",
-    "dev": "MODE=development nodemon --env-file=.env build.mjs"
+    "dev": "MODE=development node --env-file=.env build.mjs"
   },
   "keywords": [],
   "author": "",

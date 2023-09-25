@@ -1,7 +1,6 @@
 import bs from "browser-sync";
 import esbuild from "esbuild";
 import fs from "fs";
-import open from "open";
 import path from "path";
 
 // VARIABLES
@@ -9,7 +8,7 @@ import path from "path";
 const dist = process.env.DIST_DIR;
 const events = ["change", "rename"];
 const src = "src";
-const transformFiles = [".js", ".css"];
+const transformFiles = [".js", ".jsx", ".css"];
 const url = process.env.URL;
 
 // INITIALIZATION
@@ -20,7 +19,6 @@ if (process.env.MODE === "production") {
 } else {
   bs.init({ proxy: url });
   watchFiles();
-  open(url);
 }
 
 // FUNCTIONS
@@ -93,6 +91,7 @@ async function transformFile(source, target) {
     entryPoints: [source], // Input file path
     bundle: true, // Bundle all dependencies into one file
     outfile: target, // Output file path
+    loader: { ".js": "jsx" },
   };
   if (process.env.MODE === "development") options.sourcemap = true;
   if (process.env.MODE === "production") options.minify = true;
