@@ -18,6 +18,3 @@ This project is created using `esbuild` and intended to run alongside a `DevKins
 - Automatic page refresh when a change occurs
 - JavaScript and CSS are compiled/minified
 - All other files are copied over, unchanged
-
-
-
