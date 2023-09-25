@@ -4,7 +4,7 @@ import { buildFiles } from "./build.mjs";
 const dist = process.env.DIST_DIR;
 buildFiles();
 // Create a write stream for the output ZIP file
-const output = fs.createWriteStream(`${process.env.THEME}.zip`);
+const output = fs.createWriteStream(`${process.env.NAME}.zip`);
 // Create a new archiver instance
 const archive = archiver("zip", { zlib: { level: 9 } });
 // Pipe the output to the archive
